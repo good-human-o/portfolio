@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Optional: Custom styles can go here */
+
+/* Add this at the bottom of src/index.css */
+@keyframes flicker {
+  0% {
+    opacity: 1;
+    transform: none;
+  }
+  15% {
+    opacity: 0.8;
+    transform: translate(1px, -1px);
+  }
+  30% {
+    opacity: 0.6;
+    transform: translate(-1px, 1px);
+  }
+  45% {
+    opacity: 0.9;
+    transform: translate(2px, -2px);
+  }
+  60% {
+    opacity: 0.7;
+    transform: translate(-2px, 2px);
+  }
+  75% {
+    opacity: 1;
+    transform: none;
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.glitch-letter-multi {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  color: #fff;
+}
+
+.glitch-letter-multi::before,
+.glitch-letter-multi::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: -1;
+  animation: flicker 1s infinite ease-in-out;
+}
+
+.glitch-letter-multi::before {
+  color: red;
+  transform: translate(-1px, 0);
+  animation-delay: 0.1s;
+}
+
+.glitch-letter-multi::after {
+  color: green;
+  transform: translate(1px, 0);
+  animation-delay: 0.2s;
+}
+
+.glitch-on-hover {
+  position: relative;
+  display: inline-block;
+  color: #0ff;
+  text-shadow: 0 0 2px #0ff, 0 0 8px #0ff;
+  transition: all 0.3s ease;
+}
+
+.glitch-on-hover::before,
+.glitch-on-hover::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.7;
+  clip-path: inset(0 0 0 0);
+  pointer-events: none;
+}
+
+.glitch-on-hover::before {
+  color: #f0f;
+  z-index: -1;
+  transform: translate(-2px, 0);
+}
+
+.glitch-on-hover::after {
+  color: #0f0;
+  z-index: -2;
+  transform: translate(2px, 0);
+}
+
+.glitch-on-hover:hover,
+.glitch-on-hover:hover::before,
+.glitch-on-hover:hover::after {
+  animation: glitch-flicker 1s infinite ease-in-out,
+             glitch-rgb 0.7s infinite step-end;
+}
+
+
+
