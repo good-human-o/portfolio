@@ -14,7 +14,6 @@ function App() {
     <>
       <div className="bg-black text-white font-sans scroll-smooth">
       <Navbar/>
-      <Particles />
       <Hero />
       <About />
       <Skills />
