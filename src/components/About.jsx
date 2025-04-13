@@ -21,7 +21,7 @@ const About = () => {
       >
         {/* Larger Floating Image - Vertically Centered */}
         <motion.img
-          src={profilePic}
+          src="../Images/profile202.jpg"
           alt="Anshul"
 className="w-44 h-44 md:w-60 md:h-60 rounded-full border-4 border-cyan-400 shadow-lg ring-4 ring-cyan-400/30 hover:ring-pink-400/40 transition duration-300"
           initial={{ y: 10 }}
