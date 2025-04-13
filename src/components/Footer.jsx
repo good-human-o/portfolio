@@ -22,7 +22,7 @@ const Footer = () => {
         {/* Social Icons */}
         <div className="flex justify-center space-x-6 text-2xl mb-4">
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/good-human-o"
             target="_blank"
             rel="noopener noreferrer"
             className="text-cyan-400 hover:text-pink-400 transition transform hover:scale-110 duration-300 animate-pulse"
@@ -30,7 +30,7 @@ const Footer = () => {
             <FaGithub />
           </a>
           <a
-            href="https://linkedin.com/in/yourusername"
+            href="https://www.linkedin.com/in/anshul-vijayvergiya-90a857267/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-cyan-400 hover:text-pink-400 transition transform hover:scale-110 duration-300 animate-pulse delay-100"
@@ -38,7 +38,7 @@ const Footer = () => {
             <FaLinkedin />
           </a>
           <a
-            href="https://instagram.com/yourusername"
+            href="https://www.instagram.com/good_human.o"
             target="_blank"
             rel="noopener noreferrer"
             className="text-cyan-400 hover:text-pink-400 transition transform hover:scale-110 duration-300 animate-pulse delay-200"
@@ -46,12 +46,12 @@ const Footer = () => {
             <FaInstagram />
           </a>
           <a
-            href="https://twitter.com/yourusername"
+            href="https://x.com/good_human_o"
             target="_blank"
             rel="noopener noreferrer"
             className="text-cyan-400 hover:text-pink-400 transition transform hover:scale-110 duration-300 animate-pulse delay-300"
           >
-            <FaTwitter />
+            <FaX />
           </a>
         </div>
 
