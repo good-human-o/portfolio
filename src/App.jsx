@@ -1,11 +1,10 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import Particles from "./components/Particles";
 import Navbar from './components/Navbar';
 
 function App() {
@@ -27,4 +26,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

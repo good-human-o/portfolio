@@ -51,7 +51,7 @@ const Footer = () => {
             rel="noopener noreferrer"
             className="text-cyan-400 hover:text-pink-400 transition transform hover:scale-110 duration-300 animate-pulse delay-300"
           >
-            <FaX />
+            <FaTwitter />
           </a>
         </div>
 
