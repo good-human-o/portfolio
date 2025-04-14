@@ -40,11 +40,15 @@ const Contact = () => {
       >
         <h2 className="text-4xl font-bold text-cyan-400 mb-8 font-orbitron">Contact Me</h2>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 text-left">
+        <form onSubmit={handleSubmit(onSubmit)} 
+        className="space-y-5 text-left" 
+        action="https://formspree.io/f/xdkebrjj" 
+        method="POST">
           <div>
             <label className="text-sm text-cyan-300">Name</label>
             <input
               type="text"
+              name="name"
               placeholder="Your Name"
               {...register("name", { required: true })}
               className="w-full bg-black border border-cyan-400 text-white px-4 py-2 rounded-lg focus:ring-2 focus:ring-pink-400 outline-none transition"
@@ -56,6 +60,7 @@ const Contact = () => {
             <label className="text-sm text-cyan-300">Email</label>
             <input
               type="email"
+              name="email"
               placeholder="your@email.com"
               {...register("email", {
                 required: true,
@@ -70,6 +75,7 @@ const Contact = () => {
             <label className="text-sm text-cyan-300">Message</label>
             <textarea
               rows="4"
+              name="message"
               placeholder="Your message..."
               {...register("message", { required: true })}
               className="w-full bg-black border border-cyan-400 text-white px-4 py-2 rounded-lg focus:ring-2 focus:ring-pink-400 outline-none transition"
