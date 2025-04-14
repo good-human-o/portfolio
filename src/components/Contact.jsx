@@ -13,17 +13,19 @@ const Contact = () => {
     formState: { errors, isSubmitting },
   } = useForm();
 
-  const onSubmit = async (data) => {
+  const onSubmit = async (data, e) => {
+    e.preventDefault();
     try {
+      const formData = new FormData();
+      formData.append("name", data.name);
+      formData.append("email", data.email);
+      formData.append("message", data.message);
+  
       const response = await fetch("https://formspree.io/f/xdkebrjj", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify(data),
+        body: formData,
       });
-
+  
       if (response.ok) {
         setSubmitted(true);
         reset();
@@ -53,7 +55,7 @@ const Contact = () => {
       >
         <h2 className="text-4xl font-bold text-cyan-400 mb-8 font-orbitron">Contact Me</h2>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 text-left">
+        <form onSubmit={(e) => handleSubmit((data) => onSubmit(data, e))(e)} className="space-y-5 text-left">
           <div>
             <label className="text-sm text-cyan-300">Name</label>
             <input
