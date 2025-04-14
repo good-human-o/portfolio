@@ -13,14 +13,27 @@ const Contact = () => {
     formState: { errors, isSubmitting },
   } = useForm();
 
-  const onSubmit = (data) => {
-    // Simulate message sending
-    setTimeout(() => {
-      console.log("Message Sent:", data);
-      setSubmitted(true);
-      reset();
-      setTimeout(() => setSubmitted(false), 4000);
-    }, 1000);
+  const onSubmit = async (data) => {
+    try {
+      const response = await fetch("https://formspree.io/f/xdkebrjj", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        reset();
+        setTimeout(() => setSubmitted(false), 4000);
+      } else {
+        alert("⚠️ Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error sending message:", error);
+    }
   };
 
   return (
@@ -40,10 +53,7 @@ const Contact = () => {
       >
         <h2 className="text-4xl font-bold text-cyan-400 mb-8 font-orbitron">Contact Me</h2>
 
-        <form onSubmit={handleSubmit(onSubmit)} 
-        className="space-y-5 text-left" 
-        action="https://formspree.io/f/xdkebrjj" 
-        method="POST">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 text-left">
           <div>
             <label className="text-sm text-cyan-300">Name</label>
             <input
