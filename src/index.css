@@ -1,13 +1,9 @@
 @import "tailwindcss";
 
-/* src/index.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Optional: Custom styles can go here */
-
-/* Add this at the bottom of src/index.css */
 @keyframes flicker {
   0% {
     opacity: 1;

@@ -1,4 +1,3 @@
-// src/components/About.jsx
 import React from "react";
 import { motion } from "framer-motion";
 import profilePic from "../assets/profile202.jpg";
@@ -9,7 +8,7 @@ const About = () => {
       id="about"
       className="relative py-20 sm:py-24 md:py-32 flex flex-col items-center justify-center bg-black text-white px-4 overflow-hidden"
     >
-      {/* Glow Background */}
+      {/* Background  \*/}
       <div className="absolute inset-0 z-0 bg-gradient-to-tr from-cyan-500/10 via-fuchsia-500/10 to-green-400/10 blur-3xl" />
 
       <motion.div
@@ -19,7 +18,7 @@ const About = () => {
         transition={{ duration: 1 }}
         viewport={{ once: true }}
       >
-        {/* Floating Image - Centered on mobile, Left on desktop */}
+        {/* Floating Image  */}
         <div className="flex justify-center md:justify-start mb-8 md:mb-0">
           <motion.img
             src={profilePic}

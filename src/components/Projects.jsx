@@ -1,4 +1,3 @@
-// src/components/Projects.jsx
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -35,7 +34,6 @@ const Projects = () => {
       <div className="z-10 relative max-w-6xl mx-auto">
         <h2 className="text-4xl font-bold text-cyan-400 mb-12 font-orbitron">Projects</h2>
 
-        {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {projects.map((project, index) => (
             <motion.div
@@ -46,10 +44,8 @@ const Projects = () => {
               viewport={{ once: true }}
               className="bg-white/5 border border-cyan-400/20 backdrop-blur-md p-6 rounded-2xl text-left hover:scale-[1.03] transition-all duration-300 shadow-md hover:shadow-cyan-400/30 relative group overflow-hidden"
             >
-              {/* Glow line effect */}
               <div className="absolute top-0 left-0 h-full w-[2px] bg-gradient-to-b from-cyan-400 via-pink-400 to-green-400 opacity-0 group-hover:opacity-100 transition-all duration-300 animate-pulse"></div>
 
-              {/* Project Content */}
               <h3 className="text-2xl font-bold text-cyan-300 group-hover:text-pink-400 transition">{project.title}</h3>
               <p className="text-gray-300 mt-2">{project.description}</p>
               <div className="mt-4 flex flex-wrap gap-2">

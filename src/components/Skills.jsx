@@ -1,4 +1,3 @@
-// src/components/Skills.jsx
 import React from "react";
 import { motion } from "framer-motion";
 import {
@@ -25,13 +24,12 @@ const Skills = () => {
       id="skills"
       className="relative z-10 py-24 px-6 bg-black text-white text-center overflow-hidden"
     >
-      {/* Glow Background */}
+
       <div className="absolute inset-0 z-0 bg-gradient-to-br from-cyan-500/10 via-pink-500/10 to-green-400/10 blur-3xl" />
 
       <div className="z-10 relative max-w-5xl mx-auto">
         <h2 className="text-4xl font-bold text-cyan-400 mb-12 font-orbitron">Skills</h2>
 
-        {/* Animated Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
           {skills.map((skill, index) => (
             <motion.div

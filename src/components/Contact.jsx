@@ -1,4 +1,3 @@
-// src/components/Contact.jsx
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
@@ -13,19 +12,18 @@ const Contact = () => {
     formState: { errors, isSubmitting },
   } = useForm();
 
-  const onSubmit = async (data, e) => {
-    e.preventDefault();
+  const onSubmit = async (data) => {
     try {
       const formData = new FormData();
       formData.append("name", data.name);
       formData.append("email", data.email);
       formData.append("message", data.message);
-  
+
       const response = await fetch("https://formspree.io/f/xdkebrjj", {
         method: "POST",
         body: formData,
       });
-  
+
       if (response.ok) {
         setSubmitted(true);
         reset();
@@ -43,7 +41,7 @@ const Contact = () => {
       id="contact"
       className="relative z-10 py-24 px-6 bg-black text-white text-center overflow-hidden"
     >
-      {/* Glow Background */}
+      
       <div className="absolute inset-0 z-0 bg-gradient-to-tr from-cyan-500/10 via-pink-500/10 to-green-400/10 blur-3xl" />
 
       <motion.div
@@ -55,7 +53,7 @@ const Contact = () => {
       >
         <h2 className="text-4xl font-bold text-cyan-400 mb-8 font-orbitron">Contact Me</h2>
 
-        <form onSubmit={(e) => handleSubmit((data) => onSubmit(data, e))(e)} className="space-y-5 text-left">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 text-left">
           <div>
             <label className="text-sm text-cyan-300">Name</label>
             <input

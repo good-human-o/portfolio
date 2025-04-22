@@ -1,4 +1,3 @@
-// src/components/Navbar.jsx
 import React, { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
@@ -22,7 +21,7 @@ const Navbar = () => {
         scrolled ? "bg-black/70 backdrop-blur border-b border-cyan-400/20" : "bg-transparent"
       }`}
     >
-      {/* Desktop Centered Menu */}
+
       <div className="max-w-6xl mx-auto flex justify-center items-center">
         <ul className="hidden md:flex space-x-8 text-sm uppercase tracking-wider">
           {navItems.map((item) => (
@@ -37,7 +36,7 @@ const Navbar = () => {
           ))}
         </ul>
         
-        {/* Mobile menu button - right aligned */}
+
         <div className="md:hidden w-full flex justify-end">
           <button 
             className="text-cyan-400 hover:text-pink-400 transition-colors z-50"
@@ -70,7 +69,6 @@ const Navbar = () => {
             ))}
           </ul>
           
-          {/* Optional: Social links at bottom of side menu */}
           <div className="mt-auto mb-10">
             <div className="w-full h-px bg-cyan-400/30 my-6"></div>
             <p className="text-gray-400 text-sm">© 2025 Anshul</p>
